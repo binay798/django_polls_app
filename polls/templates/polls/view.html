@@ -1,0 +1,22 @@
+{% extends 'polls/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="container border rounded-lg p-4">
+    <div class="row">
+        <div class="col-12">
+            <h2><small>Which programmig language do you like?</small></h2><br>
+        </div>
+        <div class="col-12 mb-3">
+            <input type="radio" name="poll"  class="ml-4 mt-1" value="option_1">
+            <label for="">Django</label>
+            <input type="radio" name="poll"  class="ml-4 mt-1" value="option_2">
+            <label for="">Node js</label>
+            <input type="radio" name="poll"  class="ml-4 mt-1" value="option_3">
+            <label for="">.Net</label>
+        </div>
+        <button class="btn btn-primary ml-4" type="button">Submit</button>
+    </div>
+</div>
+{% endblock %}

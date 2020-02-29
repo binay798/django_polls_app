@@ -1,0 +1,44 @@
+{% extends 'polls/base.html' %}
+{% load static %}
+{% block content %}
+
+
+    <div class="container border rounded-lg p-3 w-50 mt-4">
+        <div class="row">
+            <div class="col-sm-8">
+                <p>Which language do you work on?</p>
+            </div>
+            <div class="col-sm-4">
+                <div class="row">
+                    <div class="col-sm-6 p-0 ">
+                        <a href="{% url 'polls:view' %}"><button class="btn btn-primary">View</button></a>
+                    </div>
+                    <div class="col-sm-6 p-0">
+                        <a href="{% url 'polls:result' %}"><button class="btn btn-secondary">Result</button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container border rounded-lg p-3 w-50 mt-4">
+        <div class="row">
+            <div class="col-sm-8">
+                <p>What is your favourite programming language?</p>
+            </div>
+            <div class="col-sm-4">
+                <div class="row">
+                    <div class="col-sm-6 p-0 ">
+                        <button class="btn btn-primary">View</button>
+                    </div>
+                    <div class="col-sm-6 p-0">
+                        <button class="btn btn-secondary">Result</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}
