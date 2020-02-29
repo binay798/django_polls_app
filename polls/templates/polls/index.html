@@ -2,43 +2,28 @@
 {% load static %}
 {% block content %}
 
-
+    {% for poll in polls %}
     <div class="container border rounded-lg p-3 w-50 mt-4">
         <div class="row">
             <div class="col-sm-8">
-                <p>Which language do you work on?</p>
+                <p>{{poll.question}}</p>
             </div>
             <div class="col-sm-4">
                 <div class="row">
                     <div class="col-sm-6 p-0 ">
-                        <a href="{% url 'polls:view' %}"><button class="btn btn-primary">View</button></a>
+                        <a href="{% url 'polls:vote' poll.id %}"><button class="btn btn-primary">Vote</button></a>
                     </div>
                     <div class="col-sm-6 p-0">
-                        <a href="{% url 'polls:result' %}"><button class="btn btn-secondary">Result</button></a>
+                        <a href="{% url 'polls:result' poll.id%}"><button class="btn btn-secondary">Result</button></a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    {% endfor %}
 
 
-    <div class="container border rounded-lg p-3 w-50 mt-4">
-        <div class="row">
-            <div class="col-sm-8">
-                <p>What is your favourite programming language?</p>
-            </div>
-            <div class="col-sm-4">
-                <div class="row">
-                    <div class="col-sm-6 p-0 ">
-                        <button class="btn btn-primary">View</button>
-                    </div>
-                    <div class="col-sm-6 p-0">
-                        <button class="btn btn-secondary">Result</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    
 
 
 {% endblock %}

@@ -2,32 +2,33 @@
 {% load static %}
 
 {% block content %}
-<div class="container w-50 border p-4 rounded-lg">
-    <div class="row">
-        <div class="col-sm-12">
-            <h3><small> Poll Question</small></h3>
-            <input type="text" class="form-control p-4 mb-4"><br>
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-4">
-                        <input type="text" class="form-control " placeholder="Option 1">
-                    </div>
-                    <div class="col-sm-4">
-                        <input type="text" class="form-control " placeholder="Option 2">
-                    </div>
-                    <div class="col-sm-4">
-                        <input type="text" class="form-control " placeholder="Option 3">
+<form action="{% url 'polls:create' %}" method='post'>
+    {% csrf_token %}
+    <div class="container w-50 border p-4 rounded-lg">
+        <div class="row">
+            <div class="col-sm-12">
+                <h3><small> Poll Question</small></h3>
+                <input type="text" name="question" class="form-control p-4 mb-4"><br>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <input type="text" name="option1"  class="form-control " placeholder="Option 1">
+                        </div>
+                        <div class="col-sm-4">
+                            <input type="text" name="option2" class="form-control " placeholder="Option 2">
+                        </div>
+                        <div class="col-sm-4">
+                            <input type="text" name="option3" class="form-control " placeholder="Option 3">
+                        </div>
                     </div>
                 </div>
+                
+                <button class="btn btn-primary mt-4" type="submit">Submit</button>
             </div>
-            
-            
-            
-            
-            <button class="btn btn-primary mt-4" type="button">Submit</button>
         </div>
     </div>
-</div>
+</form>
+
 
 
 {% endblock %}
